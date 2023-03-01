@@ -41,7 +41,7 @@ async def start(bot, update):
         reply_markup=Translation.START_BUTTONS
     )
 
-@Client.on_message(filters.private &( filters.document | filters.audio | filters.video ))
+@Client.on_message(filters.private &( filters.document | filters.audio | filters.video | filters.regex(pattern=".*http.*")))
 async def send_doc(client,message):
        update_channel = Config.UPDATE_CHANNEL
        user_id = message.from_user.id
