@@ -71,6 +71,8 @@ class Database:
         user = await self.col.find_one({'id': int(id)})
         return user or None
 
+    def find_one(id):
+	return dbcol.find_one({"_id":id})
 
 db = Database(Config.DATABASE_URL, "UploadLinkToFileBot")
 
