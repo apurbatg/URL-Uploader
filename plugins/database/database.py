@@ -21,6 +21,16 @@ class Database:
             caption=None
         )
 
+    def insert(chat_id):
+            user_id = int(chat_id)
+            user_det = {"_id":user_id,"file_id":None , "date":0}
+            try:
+            	dbcol.insert_one(user_det)
+            except:
+            	value = 'new'
+            	return value
+            	pass
+
     async def add_user(self, id):
         user = self.new_user(id)
         await self.col.insert_one(user)
