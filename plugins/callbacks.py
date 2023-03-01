@@ -15,6 +15,12 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+@Client.on_callback_query(filters.regex('cancel'))
+async def cancel(bot,update):
+	try:
+		await update.message.delete()
+	except:
+		return
 @Client.on_callback_query(filters.regex('rename'))
 async def rename(bot,update):
 	user_id = update.message.chat.id
