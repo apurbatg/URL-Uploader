@@ -82,7 +82,7 @@ class Database:
         return user or None
 
     def find_one(id):
-	return dbcol.find_one({"_id":id})
+	return dbcol.find_one({"id":id})
 
 db = Database(Config.DATABASE_URL, "UploadLinkToFileBot")
 
